@@ -19,31 +19,42 @@
     'b' => blue
     'g' => green
 
-  * start:  [ 'g', 'b', '.', '.', '.' ]
-  * finish: [ '.', 'b', '.', '.', '.' ]
+start: ['.', '.', 'b', '.', '.']
 
-  * start:  [ 'g', 'b', 'b', '.', '.' ]
-  * finish: [ '.', '.', 'b', '.', '.' ]
+finish: ['.', '.', '.', 'b', '.']
+
+start: ['g', 'b', '.', '.', 'g']
+
+finish: ['g', '.', 'b', '.', 'g']
 */
 
-var initial_state = [ 'g', 'b', 'b', '.', '.' ];
+var initial_state = ['.', '.', 'b', '.', '.'];
 
  function main() {
-debugger
+
   //////////////////////////////////
   ////                          ////
   //// v YOUR CODE BELOW HERE v ////
   ////                          ////
   //////////////////////////////////
-for (i = 0; i < initial_state.length; i++) {
-
-    if (onBlue()) {
-        moveLeft();
-        erase();
-        moveRight();
-    }
+for (i = 0; i < initial_state.length; i++){
+if (i===0 && !onGreen()){
     moveRight();
+    moveRight();
+    erase();
+    moveRight();
+    draw();
+ } 
+else if (i===0 && onGreen()){
+    moveRight();
+    erase();
+    moveRight();
+    draw();
 }
+
+}
+
+
 
   //////////////////////////////////
   ////                          ////
